@@ -1,19 +1,37 @@
 # MODIFY ME TO IMPLEMENT YOUR SOLUTION
 # TO PROBLEM 4: COUNT THE LONGEST SUBSEQUENCE
 #
-# NAME:         FIXME
+# NAME:         Tara Haller
 # ASSIGNMENT:   Project 2: Stacks & Queues
 
 from Queue import Queue
 
 # count longest sequence of duplicates in a queue
 # can destroy the queue & make it empty
+
 def count_longest(q):
-    len = 0
-    # FIXME
-    return len
+    leng = 0
+    max_list = []
+    if q.is_empty():
+        return leng
+    prev=q.deq()
+    leng = 1
+    max = 0
+    while(q.is_empty()==False):
+        if prev == q.front():
+            leng +=1
+            prev = q.deq()
+            if leng > max:
+                max = leng
+        else:
+            prev = q.deq()
+            leng = 1
+        
+    leng = max
+    return leng
 
 def main():
+    print(Queue([l for l in "m" * 5]))
     print("out 2:", count_longest(Queue([l for l in "hello"])))
     print("out 5:", count_longest(Queue([l for l in "m" * 5])))
     print("out 3:", count_longest(Queue([l for l in "heee" ])))
