@@ -17,9 +17,13 @@ def matcher(word):
     open = ['[', '(', '{']
     closed = [']',')', '}']
     #if everything is a letter
+    count = 0
     for letter in word:
         if letter in '[({})]':
             grab.push(letter)
+            count += 1
+    if count % 2 == 1:
+        return False
     if grab.is_empty() == True:
         return True
     while grab.is_empty() == False:
