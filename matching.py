@@ -14,8 +14,8 @@ def matcher(word):
     grab = Stack([])
     check = Stack([])
     matched = ["()", "{}", "[]"]
-    open = ['[', '(']
-    closed = [']',')']
+    open = ['[', '(', '{']
+    closed = [']',')', '}']
     #if everything is a letter
     for letter in word:
         if letter in '[({})]':
