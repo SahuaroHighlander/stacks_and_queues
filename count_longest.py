@@ -12,8 +12,8 @@ from Queue import Queue
 def count_longest(q):
     leng = 0
     max_list = []
-    if q.is_empty():
-        return leng
+    if q.is_empty() or q.size() == 1:
+        return q.size()
     prev=q.deq()
     leng = 1
     max = 0
